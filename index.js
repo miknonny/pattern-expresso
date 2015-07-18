@@ -13,14 +13,16 @@ spinner.start();
 var _finder = {
   extract: function (inFile, outFile, pattern) {
     lineReader.eachLine(inFile, function (line) {
+      // console.log(line.match(pattern)[0])
       if (line.match(pattern) !== null) {
         fs.appendFile(outFile, line.match(pattern)[0] + '\n', function (err) {
           if (err) throw err;
         })
-      }
+      } 
     })
     .then(function () {
       console.log('done!');
+      // process.exit(1);
     })
   }
 }
@@ -34,18 +36,7 @@ var main = function () {
     process.exit(1);  
   }
   if (regexPatterns[patternOption]) {
-    if (patternOption === 'ipv4') {
-      _finder.extract(src, dest, regexPatterns.ipv4);
-    }
-    if (patternOption === 'ipv6') {
-      _finder.extract(src, dest, regexPatterns.ipv6);
-    }
-    if (patternOption === 'email') {
-      _finder.extract(src, dest, regexPatterns.email);
-    }
-    if (patternOption === 'url') {
-      _finder.extract(src, dest, regexPatterns.url)
-    }
+    _finder.extract(src, dest, regexPatterns[patternOption]);
   } else {
       console.log('Usage: $ pattern-expresso <source> <destination> <option>');
       process.exit(1)
@@ -53,3 +44,4 @@ var main = function () {
 }
 
 main();
+spinner.stop();
