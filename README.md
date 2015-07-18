@@ -19,6 +19,7 @@ pattern-expresso <source> <destination> <option>
 ```
 $ pattern-expresso large_file.txt dest_file.txt ipv4
 ```
-
+## Adding more patterns.
+- Edit Util/regex-pattern.js to add more patterns.
 ## License
 MIT © Michael Mbah
