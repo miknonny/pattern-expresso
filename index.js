@@ -22,7 +22,7 @@ var _finder = {
     })
     .then(function () {
       console.log('done!');
-      // process.exit(1);
+      spinner.stop();
     })
   }
 }
@@ -44,4 +44,3 @@ var main = function () {
 }
 
 main();
-spinner.stop();
