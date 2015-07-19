@@ -1,7 +1,7 @@
-#Pattern Expresso.
-Extracts regular expression patterns from large files that can not be buffered in memory. 
+# Pattern Expresso.
+- Extracts regular expression patterns from large files that can not be buffered in memory. 
 
-##Install
+## Install
 ```
 $ npm install -g pattern-expresso
 ```
@@ -9,7 +9,7 @@ $ npm install -g pattern-expresso
 Usage
 pattern-expresso <source> <destination> <option>
 
-##Options.
+## Options.
 - ipv4: extract ipv4 addresses form file.
 - ipv6: extracts ipv6 address from  file.
 - url: extracts url from file.
